@@ -47,7 +47,7 @@ const Navbar = () => {
       {}
       <div className="navbar-end gap-3">
         <a className="font-semibold text-gray-600 cursor-pointer hover:text-black hidden sm:block">Sign In</a>
-        <a className="btn text-white border-none rounded-full px-6 bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500 hover:opacity-90">
+        <a className="btn text-white border-none rounded-lg px-6 bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500 hover:opacity-90">
           Sign Up
         </a>
       </div>
