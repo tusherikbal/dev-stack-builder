@@ -7,7 +7,18 @@ const MainSection = () => {
     const [selectedTechs, setSelectedTechs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-
+    useEffect(() => {
+        fetch('/data.json')
+            .then(res => res.json())
+            .then(data => {
+                setTechs(data);
+                setIsLoading(false);
+            })
+            .catch(error => {
+                console.error("Error loading data:", error);
+                setIsLoading(false);
+            });
+    }, []);
 
     const handleAdd = (tech) => {
         const isExist = selectedTechs.find(item => item.id === tech.id);
@@ -33,7 +44,6 @@ const MainSection = () => {
 
     return (
         <div className="px-4 md:px-8 mt-16 mb-20 relative">
-            {/* React Toastify Container */}
             <ToastContainer />
 
             <div className="mb-10 text-center lg:text-left">
